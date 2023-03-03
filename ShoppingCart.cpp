@@ -23,18 +23,19 @@ inline void ShoppingCart::SetDate(std::string& date){ this->currentDate = date; 
 std::string ShoppingCart::GetDate(){ return currentDate; } //Gets date
 
 void ShoppingCart::RemoveItem(std::string&  itemName){
-    int i = 0;
-    if(i < cartItems.size()){
+    if(cartItems.size() > 0){
         for(int i = 0; i < cartItems.size(); i++){
+            bool found = false;
             if (cartItems.at(i).GetName().compare(itemName) == 0){ //If any element in cartItems is equal to the parameter, it is in the list, thus is removed.
                 cartItems.erase(cartItems.begin() + i); //Erases index i from list.
-                std::cout << itemName << " has been removed from the list." << std::endl;
-            } else {
-                std::cout << "Item not found in cart. Nothing removed." << std::endl;
+                found = true;
+                std::cout << std::endl << itemName << " has been removed from the list." << std::endl;
+            } else if (found != true){
+                std::cout << "\nItem not found in cart. Nothing removed." << std::endl; //If for loop iterates through them all and doesn't find anything, then item can't be in cart
             }
         }
     } else {
-        std::cout << "No items in the list.";
+        std::cout << "\nNo items in the list." << std::endl;
     }
 }
 
@@ -52,12 +53,16 @@ void ShoppingCart::PrintDescriptions(){
 }
 
 void ShoppingCart::ModifyItem(std::string& itemName, int itemQuantity){
-    for(int i = 0; i < cartItems.size(); i++){
-        if(cartItems.at(i).GetName().compare(itemName) == 0){ //Finds the index of the item name the user typed in.
-             cartItems.at(i).SetQuantity(itemQuantity);//Changes index of the item name the user typed in to the new quantity the provided.
-        } else {
-            std::cout << "Item not found in cart. Nothing modified." << std::endl; //If item name user entered isn't found, it isn't in the list.
+    if(cartItems.size() > 0){
+        for(int i = 0; i < cartItems.size(); i++){
+            if(cartItems.at(i).GetName().compare(itemName) == 0){ //Finds the index of the item name the user typed in.
+                cartItems.at(i).SetQuantity(itemQuantity);//Changes index of the item name the user typed in to the new quantity the provided.
+            } else {
+                std::cout << "\nItem not found in cart. Nothing modified." << std::endl; //If item name user entered isn't found, it isn't in the list.
+            }
         }
+    } else {
+        std::cout << "\nItem not found in cart. Nothing modified." << std::endl; //In case anyone tries to modify an item in an empty list
     }
 
 }
@@ -79,12 +84,15 @@ double ShoppingCart::GetCostOfCart(){ //Gets the total cost of the cart
 }
 
 void ShoppingCart::PrintTotal(){ //Print
-    std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
-    std::cout << "Number of items: " << GetNumItemsInCart() << "\n\n";
+    if(cartItems.size() > 0){
+        std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
+        std::cout << "Number of items: " << GetNumItemsInCart() << "\n\n";
 
-    for(int i = 0; i < cartItems.size(); i++){
-        cartItems.at(i).PrintItemCost();
+        for(int i = 0; i < cartItems.size(); i++){
+            cartItems.at(i).PrintItemCost();
+        }
+        std::cout << "\nTotal: " << GetCostOfCart() << std::endl;
+    } else {
+        std::cout << "\nShopping cart is empty." << std::endl;
     }
-    std::cout << std::endl;
-    std::cout << "Total: " << GetCostOfCart() << std::endl;   
 } 
