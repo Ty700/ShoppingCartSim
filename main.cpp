@@ -33,7 +33,7 @@ int main(){
         std::cin >> choice;
         std::cin.ignore();
         ExecuteMenu(choice, list);
-    }while((choice != 'q'));
+    }while(choice != 'q');
 }
 
 //Print's the menu 
