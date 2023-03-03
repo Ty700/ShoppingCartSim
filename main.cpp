@@ -2,7 +2,6 @@
 *   Author: Tyler Scotti
 *   Date: March 2nd, 2023
 *   Description: This program is an online shopping cart simulator
-*   Faults: Not sure at the moment. 
 */
 
 #include "ItemToPurchase.h"
