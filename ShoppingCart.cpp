@@ -1,7 +1,7 @@
 #include "ShoppingCart.h"
 #include <string>
 #include <iostream>
-
+#include <iomanip>
 
 ShoppingCart::ShoppingCart() : customerName("None"), currentDate("January 1st, 2016") {} //Default Constructor
 
@@ -91,7 +91,7 @@ void ShoppingCart::PrintTotal(){ //Print
         for(int i = 0; i < cartItems.size(); i++){
             cartItems.at(i).PrintItemCost();
         }
-        std::cout << "\nTotal: " << GetCostOfCart() << std::endl;
+        std::cout << "\nTotal: $" << std::fixed << std::setprecision(2) << GetCostOfCart() << std::endl;
     } else {
         std::cout << "\nShopping cart is empty." << std::endl;
     }
