@@ -38,7 +38,7 @@ inline void ItemToPurchase::SetQuantity(int& quantity){ this->itemQuantity = qua
 inline void ItemToPurchase::SetDescription(std::string& itemDescription) { this->itemDescription = itemDescription; } //Description
 
 void ItemToPurchase::PrintItemCost(){
-    std::cout << GetName() << " " << GetQuantity() << " @ $" << GetPrice() << " = $" << GetPrice() * GetQuantity() << std::endl; 
+    std::cout << GetName() << " " << GetQuantity() << " @ $" << std::fixed << std::setprecision(2) << GetPrice() << " = $" << std::fixed << std::setprecision(2) << (GetPrice() * GetQuantity()) << std::endl; 
 }
 
 void ItemToPurchase::PrintItemDescription(){
