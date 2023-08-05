@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <iomanip>
+#include <iostream>
+
 #include "ItemToPurchase.h"
 class ShoppingCart {
     public:
