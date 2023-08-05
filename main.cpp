@@ -2,12 +2,11 @@
 *   Author: Tyler Scotti
 *   Date: March 2nd, 2023
 *   Description: This program is an online shopping cart simulator
+*   Note: 8/5/23 - Realized after a while I had an misuse of the inline and was causing errors. Fixed now, other code left the same but main could
+*   use a bit of a clean up. Task for another day.
 */
 
-#include "ItemToPurchase.h"
-#include "ItemToPurchase.cpp"
 #include "ShoppingCart.h"
-#include "ShoppingCart.cpp"
 
 #include <string>
 #include <iostream>
