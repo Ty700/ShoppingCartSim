@@ -1,5 +1,4 @@
-#ifndef ITEM_TO_PURCHASE_H
-#define ITEM_TO_PURCHASE_H
+#pragma once
 #include <string>
 
 class ItemToPurchase { 
@@ -24,4 +23,3 @@ private:
         int itemQuantity;
 };
 
-#endif
