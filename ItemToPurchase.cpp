@@ -29,13 +29,13 @@ std::string ItemToPurchase::GetDescription() const{ //Returns item Description
 }
 
 //Setters
-inline void ItemToPurchase::SetName(std::string& itemName){ this->itemName = itemName; } //Name
+void ItemToPurchase::SetName(std::string& itemName){ this->itemName = itemName; } //Name
 
-inline void ItemToPurchase::SetPrice(double& price){ this->itemPrice = price; } //Price
+void ItemToPurchase::SetPrice(double& price){ this->itemPrice = price; } //Price
 
-inline void ItemToPurchase::SetQuantity(int& quantity){ this->itemQuantity = quantity; } //Quantity
+void ItemToPurchase::SetQuantity(int& quantity){ this->itemQuantity = quantity; } //Quantity
 
-inline void ItemToPurchase::SetDescription(std::string& itemDescription) { this->itemDescription = itemDescription; } //Description
+void ItemToPurchase::SetDescription(std::string& itemDescription) { this->itemDescription = itemDescription; } //Description
 
 void ItemToPurchase::PrintItemCost(){
     std::cout << GetName() << " " << GetQuantity() << " @ $" << std::fixed << std::setprecision(2) << GetPrice() << " = $" << std::fixed << std::setprecision(2) << (GetPrice() * GetQuantity()) << std::endl; 
