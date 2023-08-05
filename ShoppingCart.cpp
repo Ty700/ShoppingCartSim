@@ -14,7 +14,7 @@ void ShoppingCart::AddItem(ItemToPurchase& itemName){
     cartItems.push_back(itemName); //Adds item to the vector
 }
 
- void ShoppingCart::SetCustomerName(std::string& name){ this->customerName = name; } //Sets customer name
+void ShoppingCart::SetCustomerName(std::string& name){ this->customerName = name; } //Sets customer name
 
 std::string ShoppingCart::GetCustomerName(){ return customerName; } //Gets customer name
 
