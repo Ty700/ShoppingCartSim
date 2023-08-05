@@ -14,11 +14,11 @@ void ShoppingCart::AddItem(ItemToPurchase& itemName){
     cartItems.push_back(itemName); //Adds item to the vector
 }
 
-inline void ShoppingCart::SetCustomerName(std::string& name){ this->customerName = name; } //Sets customer name
+ void ShoppingCart::SetCustomerName(std::string& name){ this->customerName = name; } //Sets customer name
 
 std::string ShoppingCart::GetCustomerName(){ return customerName; } //Gets customer name
 
-inline void ShoppingCart::SetDate(std::string& date){ this->currentDate = date; } //Sets Date
+void ShoppingCart::SetDate(std::string& date){ this->currentDate = date; } //Sets Date
 
 std::string ShoppingCart::GetDate(){ return currentDate; } //Gets date
 
