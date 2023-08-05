@@ -1,5 +1,4 @@
-#ifndef SHOPPINGCART_H
-#define SHOPPINGCART_H
+#pragma once
 #include <string>
 #include <vector>
 #include "ItemToPurchase.h"
@@ -29,8 +28,3 @@ class ShoppingCart {
     std::string customerName, currentDate;
     std::vector<ItemToPurchase> cartItems;
 };
-
-
-
-
-#endif
